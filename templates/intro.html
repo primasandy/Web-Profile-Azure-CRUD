@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='intro.css') }}">
+    <title>{% block title %} Home  {% endblock %}</title>
+</head>
+
+<body>
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a style="color:#f9532d">KELOMPOK 4</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('portofolio') }}">Portofolio</a></li>
+                <li><a href="{{ url_for('result') }}">Databases</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkModeToggle">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="main">
+            <div class="detail">
+                <h1 style="font-size: 70px; margin-top: 10%;"><span style="color:#f9532d;">CLOUD COMPUTING</span></h1>
+                <p style="text-align: justify; line-height: 1.6;">Penerapan cloud computing dalam pembuatan web profile menggunakan Flask dengan deployment di Azure memanfaatkan layanan awan untuk mempercepat dan menyederhanakan proses pengembangan serta pengelolaan aplikasi web. Proses ini umumnya melibatkan beberapa langkah kunci.Pertama, pengembang perlu membuat aplikasi web menggunakan kerangka kerja Flask. Setelah itu, langkah berikutnya adalah menggunakan layanan Azure, seperti Azure App Service, untuk menyelaraskan aplikasi Flask ke cloud. Azure App Service menyediakan platform yang dikelola sepenuhnya untuk meng-host dan mengelola aplikasi web Python.
+                </p>
+                <p style="text-align: justify; line-height: 1.6;">Selain itu, cloud computing memungkinkan skalabilitas yang mudah dan penyesuaian sumber daya sesuai kebutuhan. Azure menawarkan fleksibilitas ini dengan menyediakan sumber daya secara otomatis, memastikan bahwa aplikasi dapat menangani lonjakan lalu lintas tanpa perlu intervensi manual.Seluruh proses ini juga memberikan keleluasaan bagi pengembang untuk fokus pada kode aplikasi dan fitur, sementara infrastruktur dan keamanan dikelola oleh penyedia layanan cloud, dalam hal ini, Microsoft Azure.
+                </p>
+                <p style="text-align: justify; line-height: 1.6;">Dengan mengadopsi cloud computing melalui Azure, pengembang dapat mempercepat siklus pengembangan, meningkatkan ketersediaan, dan mengelola aplikasi secara efisien tanpa harus terlalu khawatir tentang aspek infrastruktur.
+                </p>
+            </div>
+            <div class="img-sec">
+                <div class="images">
+                    <img src="{{ url_for('static', filename='intro.png') }}", width="110%">
+                </div>
+            </div>
+        </div>
+    </section>
+    {% block content %} {% endblock %}
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

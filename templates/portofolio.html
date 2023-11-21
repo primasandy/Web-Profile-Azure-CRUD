@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='intro.css') }}">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a style="color:#f9532d">KELOMPOK 4</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('portofolio') }}">Portofolio</a></li>
+                <li><a href="{{ url_for('result') }}">Databases</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkModeToggle">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+
+    <section class="container">
+        <div class="main">
+            <div class="detail">
+                <h3 style="margin-top: 10%;">Hi, It's Me (21.83.0668)</h3>
+                <h1><span style="color:#f9532d;">PRIMA PRIMUDYA SANDY</span></h1>
+                <p style="text-align: justify; line-height: 1.6;">Saya Front-End (Tempelate) little editing dan Back-End dalam pembuatan Website Profile ini.
+                yang dimana tugas saya menyusun dan mencari tampilan sesuai tema Materi. Serta menyambungkan
+                Website ini dengan App route dari python sebagai Back-Endnya. 
+                </p>
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/primasandy86/"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://instagram.com/primasandy_86"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://github.com/primasandy"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.facebook.com/primasandy86/"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+            <div class="img-sec">
+                <div class="images">
+                    <img src="{{ url_for('static', filename='prim.png') }}", width="70%">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+
+<center><hr style="color: #f9532d; background-color: #f9532d; height: 4px; border: none; width: 50%; margin-top: 50px; margin-bottom: 50px;"></center>
+
+<section class="container">
+        <div class="main">
+            <div class="detail">
+                <h3>Hi, It's Me (21.83.0694)</h3>
+                <h1><span style="color:#f9532d;">DWI SAKTI</span></h1>
+                <p style="text-align: justify; line-height: 1.6;">Membantu menyelesaikan pembuatan dari semua menu, baik itu pun kekurangannya atau kelebihannya. Dan mencatat point - point penting untuk menjadi objek penelitian pada laporan Praktikum.
+                </p>
+                <div class="social">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+            <div class="img-sec">
+                <div class="images">
+                    <img src="{{ url_for('static', filename='dwik.png') }}", width="70%">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+
+<center><hr style="color: #f9532d; background-color: #f9532d; height: 4px; border: none; width: 50%; margin-top: 50px; margin-bottom: 50px;"></center>
+
+<section class="container">
+        <div class="main">
+            <div class="detail">
+                <h3>Hi, It's Me (21.83.0684)</h3>
+                <h1><span style="color:#f9532d;">NAVAZ PUTRA</span></h1>
+                <p style="text-align: justify; line-height: 1.6;">Saya sebagai ketua kelompok, Saya bertugas mengkoordinasi proses pengerjaan Web Profile ini dan mengoreksi kekurangan, dan memberikan kesimpulan dan saran paling besar pada project ini. 
+                </p>
+                <div class="social">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+            <div class="img-sec">
+                <div class="images">
+                    <img src="{{ url_for('static', filename='navaz.png') }}", width="70%">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+
+<center><hr style="color: #f9532d; background-color: #f9532d; height: 4px; border: none; width: 50%; margin-top: 50px; margin-bottom: 50px;"></center>
+
+<section class="container">
+        <div class="main">
+            <div class="detail">
+                <h3>Hi, It's Me (21.83.0666)</h3>
+                <h1><span style="color:#f9532d;">FAHRUDIN NUR LATIF</span></h1>
+                <p style="text-align: justify; line-height: 1.6;">Saya mempunyai jobdesk untuk menyusun Web Profile pada bagian menu About, untuk menjelaskan tentang materi yang berkaitan dengan Cloud Computing.
+                </p>
+                <div class="social">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+            <div class="img-sec">
+                <div class="images">
+                    <img src="{{ url_for('static', filename='udin.png') }}", width="70%">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
+

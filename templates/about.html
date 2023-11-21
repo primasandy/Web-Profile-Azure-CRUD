@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='intro.css') }}">
+    <title>ABOUT</title>
+</head>
+
+<body>
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a style="color:#f9532d">KELOMPOK 4</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('portofolio') }}">Portofolio</a></li>
+                <li><a href="{{ url_for('result') }}">Databases</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkModeToggle">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+
+    <section class="container">
+        <div class="main">
+            <div class="detail">
+                <h3 style="margin-top: 10%;">STEP BY STEP</h3>
+                <h1><span style="color:#f9532d;">PEMBUATAN WEB PROFILE</span></h1>
+                <p style="text-align: justify; line-height: 1.6;">Web Profile ini dibuat, Yang fungsinya untuk menjelaskan tentang Cloud Computing. Yang dimana Cloud Computing adalah Cloud computing adalah penyediaan layanan komputasi melalui internet, yang mencakup penyimpanan data, server, basis data, jaringan, perangkat lunak, dan analitika. Layanan ini disediakan secara on-demand, memungkinkan pengguna untuk mengakses sumber daya IT tanpa memiliki atau mengelola infrastruktur fisik.
+                Pada materi ini kita ditugaskan berupa :</p>
+                <p style="text-align: justify; line-height: 1.6;">1. Menyusun prototype pembuatan Web Profile dari segi HTML dan CSS yang dibutuhkan sesuai aturan yang diberikan.</p>
+                <p style="text-align: justify; line-height: 1.6;">2. Menginstall Flask dan VirtualEnv sesuai dengan langkah - langkah yang diberikan. Dan penginstalan harus sesuai folder direktori</p>
+                <p style="text-align: justify; line-height: 1.6;">3. Membuat App.py yang berisi pemograman python sebagai app route dengan metode Flask, Sebagai penghubung antara web dan flask Python.</p>
+                <p style="text-align: justify; line-height: 1.6;">4. Testing Web yang sudah terhubung dengan Flask dengan cara running App.py dan masuk ke web Localhost.</p>
+                <p style="text-align: justify; line-height: 1.6;">5. Deploy Web Profile melalui Platform Microsoft Azure. Dengan metode App Service.</p>
+            </div>
+            <div class="img-sec">
+                <div class="images">
+                    <img src="{{ url_for('static', filename='cloud.png') }}", width="100%">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

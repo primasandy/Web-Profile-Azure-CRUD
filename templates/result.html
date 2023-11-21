@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='intro.css') }}">
+    <title>DATABASE</title>
+</head>
+
+<body>
+    
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a style="color:#f9532d">KELOMPOK 4</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('portofolio') }}">Portofolio</a></li>
+                <li><a href="{{ url_for('result') }}">Databases</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkModeToggle">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+        <div class="table-responsive" >
+<table class="table" style="width: 50%; margin-left: 25%;text-align: center;border:solid; border-color:black; margin-top: 10%;">
+  <thead style="background-color: #000000;">
+    <tr style="color: white;">
+      <th scope="col">NAMA</th>
+      <th scope="col">NIM</th>
+      <th scope="col">KELAS</th>
+      <th scope="col">PRODI</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in hasil %}
+    <tr>
+      <td>{{row.0}}</td>
+      <td>{{row.1}}</td>
+      <td>{{row.2}}</td>
+      <td>{{row.3}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+    
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
