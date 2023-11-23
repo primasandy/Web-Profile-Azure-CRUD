@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{ url_for('static', filename='intro.css') }}">
-    <title>{% block title %} Home  {% endblock %}</title>
+    <title>ADD DATA</title>
 </head>
 
 <body>
+    
     <header class="container">
         <div class="page-header">
             <div class="logo">
@@ -39,25 +40,36 @@
         </div>
     </header>
 
-    <section class="container">
-        <div class="main">
-            <div class="detail">
-                <h1 style="font-size: 70px; margin-top: 10%;"><span style="color:#f9532d;">CLOUD COMPUTING</span></h1>
-                <p style="text-align: justify; line-height: 1.6;">Penerapan cloud computing dalam pembuatan web profile menggunakan Flask dengan deployment di Azure memanfaatkan layanan awan untuk mempercepat dan menyederhanakan proses pengembangan serta pengelolaan aplikasi web. Proses ini umumnya melibatkan beberapa langkah kunci.Pertama, pengembang perlu membuat aplikasi web menggunakan kerangka kerja Flask. Setelah itu, langkah berikutnya adalah menggunakan layanan Azure, seperti Azure App Service, untuk menyelaraskan aplikasi Flask ke cloud. Azure App Service menyediakan platform yang dikelola sepenuhnya untuk meng-host dan mengelola aplikasi web Python.
-                </p>
-                <p style="text-align: justify; line-height: 1.6;">Selain itu, cloud computing memungkinkan skalabilitas yang mudah dan penyesuaian sumber daya sesuai kebutuhan. Azure menawarkan fleksibilitas ini dengan menyediakan sumber daya secara otomatis, memastikan bahwa aplikasi dapat menangani lonjakan lalu lintas tanpa perlu intervensi manual.Seluruh proses ini juga memberikan keleluasaan bagi pengembang untuk fokus pada kode aplikasi dan fitur, sementara infrastruktur dan keamanan dikelola oleh penyedia layanan cloud, dalam hal ini, Microsoft Azure.
-                </p>
-                <p style="text-align: justify; line-height: 1.6;">Dengan mengadopsi cloud computing melalui Azure, pengembang dapat mempercepat siklus pengembangan, meningkatkan ketersediaan, dan mengelola aplikasi secara efisien tanpa harus terlalu khawatir tentang aspek infrastruktur.
-                </p>
-            </div>
-            <div class="img-sec">
-                <div class="images">
-                    <img src="{{ url_for('static', filename='intro.png') }}", width="110%">
-                </div>
-            </div>
+        <!--form-->
+<div style="padding-top: 5%;text-align: center;">
+  <h1 class="display-4">TAMBAHKAN DATA</h1>
+  <center><hr style="color: #f9532d; background-color: #f9532d; height: 4px; border: none; width: 50%; margin-top: 50px; margin-bottom: 50px;"></center>
+</div>
+<div class="add-box">
+ <form action="{{url_for('proses_add')}}" method="POST">
+        <div class="form-group">
+            <label>Nim</label>
+            <input type="text" name="nim" class="form-control" placeholder="Masukkan nim">
         </div>
-    </section>
-    {% block content %} {% endblock %}
+        <div class="form-group">
+            <label>Nama</label>
+            <input type="text" name="nama" class="form-control" placeholder="Masukkan nama">
+        </div>
+        <div class="form-group">
+            <label>Kelas</label>
+            <input type="text" name="kelas" class="form-control" placeholder="Masukkan kelas">
+        </div>
+        <div class="form-group">
+            <label>Prodi</label>
+            <input type="text" name="prodi" class="form-control" placeholder="Masukkan prodi">
+        </div>
+        <div style="margin-left: 74%;">
+            <button type="reset" class="btn btn-default mr-1"> Cancel </button>
+            <button type="submit" class="btn" style="background-color: #000000; color: white;"> Submit </button>
+        </div>
+    </form>
+  </div>
+    
     <script>
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
