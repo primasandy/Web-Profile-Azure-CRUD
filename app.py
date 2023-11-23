@@ -64,6 +64,24 @@ def proses_delete():
     db.commit()
     return redirect(url_for('delete'))
 
+#update data
+@app.route('/update/')
+def update():
+    return render_template('update.html')
+
+#proses update data
+@app.route('/proses_update/', methods=['POST'])
+def proses_update():
+    nim = request.form['nim']
+    new_name = request.form['new_name']
+
+    cur = db.cursor()
+    cur.execute('UPDATE datakel4 SET nama=%s WHERE nim=%s', (new_name, nim))
+    db.commit()
+    
+    return redirect(url_for('update'))
+
+
 #result data
 @app.route('/result/')
 def result():

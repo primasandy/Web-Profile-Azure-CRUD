@@ -33,6 +33,7 @@
                 <li><a href="{{ url_for('update') }}">Update Data</a></li>
                 <li><a href="{{ url_for('delete') }}">Delete Data</a></li>
                 <li><a href="{{ url_for('result') }}">Data Result</a></li>
+
             </ul>
             <label class="mode">
                 <input type="checkbox" id="darkModeToggle">
@@ -47,10 +48,13 @@
   <center><hr style="color: #f9532d; background-color: #f9532d; height: 4px; border: none; width: 50%; margin-top: 50px; margin-bottom: 50px;"></center>
 </div>
 <div class="add-box">
- <form action="{{url_for('proses_delete')}}" method="POST">
+ <form action="{{url_for('proses_update')}}" method="POST">
         <div class="form-group">
             <label>Nim</label>
             <input type="text" name="nim" class="form-control" placeholder="Masukkan nim">
+        </div>
+        <label>New Name</label>
+            <input type="text" name="new_name" class="form-control" placeholder="Masukkan Nama Baru">
         </div>
         <div style="margin-left: 74%;">
             <button type="reset" class="btn btn-default mr-1"> Cancel </button>
