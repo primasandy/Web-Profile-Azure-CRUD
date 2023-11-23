@@ -73,13 +73,18 @@ def update():
 @app.route('/proses_update/', methods=['POST'])
 def proses_update():
     nim = request.form['nim']
+    new_nim = request.form['new_nim']
     new_name = request.form['new_name']
+    new_kelas = request.form['new_kelas']
+    new_prodi = request.form['new_prodi']
 
     cur = db.cursor()
-    cur.execute('UPDATE datakel4 SET nama=%s WHERE nim=%s', (new_name, nim))
+    cur.execute('UPDATE datakel4 SET nim=%s, nama=%s, kelas=%s, prodi=%s WHERE nim=%s', (new_nim, new_name, new_kelas, new_prodi, nim))
     db.commit()
     
     return redirect(url_for('update'))
+
+
 
 
 #result data

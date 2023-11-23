@@ -51,10 +51,19 @@
  <form action="{{url_for('proses_update')}}" method="POST">
         <div class="form-group">
             <label>Nim</label>
-            <input type="text" name="nim" class="form-control" placeholder="Masukkan nim">
-        </div>
+            <input type="text" name="nim" class="form-control" placeholder="Masukkan Nim mahasiswa">
+        
+        <label>New Nim</label>
+            <input type="text" name="new_nim" class="form-control" placeholder="Masukkan Nim Baru">
+        
         <label>New Name</label>
             <input type="text" name="new_name" class="form-control" placeholder="Masukkan Nama Baru">
+        
+        <label>New Kelas</label>
+            <input type="text" name="new_kelas" class="form-control" placeholder="Masukkan Kelas Baru">
+        
+        <label>New Prodi</label>
+            <input type="text" name="new_prodi" class="form-control" placeholder="Masukkan Prodi Baru">
         </div>
         <div style="margin-left: 74%;">
             <button type="reset" class="btn btn-default mr-1"> Cancel </button>
