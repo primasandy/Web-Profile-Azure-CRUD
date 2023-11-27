@@ -85,8 +85,6 @@ def proses_update():
     return redirect(url_for('update'))
 
 
-
-
 #result data
 @app.route('/result/')
 def result():
